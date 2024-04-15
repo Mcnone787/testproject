@@ -5,9 +5,9 @@ import { ref } from 'vue';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 const props = defineProps({
-    cursos:Object
+    recurso:Object
 });
-let cursos=ref(props.cursos);
+let recurso=ref(props.recurso);
 
 const editorData = ref('');
 const editor = ClassicEditor;
@@ -55,45 +55,32 @@ function cookies(){
 <template>
   <div class="navbar bg-base-100">
   <div class="flex-1">
-    <img src="img/logo.png" style="width:auto;height:70px;">
+    <a href="/"> Home</a>
   </div>
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1">
       <li><a>Link</a></li>
-      <li><a href="login">Login</a></li>
-      <li><a href="register">Register</a></li>
-      <li></li>
+   
      
     </ul>
   </div>
 </div>
 
-<div class="Banner">
 
-    <img src="img/banner.jpg" class="w-full" style="height:480px; object-fit: cover;">
-</div>
-<div>
-        <p class="text-center mt-5">En esta web podras ver mucha informacion de diferentes cursos que tenemos para ti!</p>
-</div>
 <div style="    display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
     align-items: center;">
                 
-                <div v-for="(item,index) in cursos">
+                <div >
                     <div class="mt-5">
-                        <a :href="`Recursos_Users/${item.id}`">{{ item.nombre }}</a>
+                        <h1>Titulo {{ recurso.titulo }}</h1>
+                        <p>Contenido: </p>
+                        <div v-html="recurso.contenido"></div>
                     </div>
                 </div>
         </div>
 
-<div style="background-color:gray;position:absolute;height: 100px;display:flex;justify-content: center;
-    flex-direction: row;" class="w-full" v-show="cookieshow" >
-    <div>
-        <p style="color:white;">Acepta nuestra politica de cookies?</p>
-    </div>
-    <button @click="cookies"  class="btn btn-success">Aceptar</button>
 
-</div>
 </template>
