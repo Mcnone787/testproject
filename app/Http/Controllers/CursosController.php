@@ -19,7 +19,7 @@ class CursosController extends Controller
         return response()->json([
             'success' => true,
             'message' => $curso,
-        ]);
+        ],201);
     }
     
     function getALlCursos(){
