@@ -15,5 +15,10 @@ class Curso extends Model
         'descripcion',
         'visible'
     ];
+
+    public function recursos()
+    {
+        return $this->hasMany(Recurso::class);
+    }
     
 }

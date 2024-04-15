@@ -12,12 +12,13 @@ use App\Models\Curso;
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
+        'cursos' => Curso::all()->where("visible","1"),
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
     ]);
-});
+})->name("home");
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard', [
@@ -37,6 +38,16 @@ Route::post('/createcurso', [CursosController::class, 'createcurso'])->name('cre
 Route::post('/getALlCursos', [CursosController::class, 'getALlCursos'])->name('getALlCursos');
 
 Route::get('/recurso/{id}', [RecursoController::class, 'recursoIndex'])->name('recursoIndex');
+
+Route::post('/createrecurso', [RecursoController::class, 'createrecurso'])->name('createrecurso');
+Route::post('/getALlRecursos', [RecursoController::class, 'getALlRecursos'])->name('getALlRecursos');
+Route::post('/editRecurso', [RecursoController::class, 'editRecurso'])->name('editRecurso');
+Route::post('/loadRecruso', [RecursoController::class, 'loadRecruso'])->name('loadRecruso');
+Route::post('/deleteRecurso', [RecursoController::class, 'deleteRecurso'])->name('deleteRecurso');
+
+Route::get('/Recursos_Users/{id}', [RecursoController::class, 'Recursos_Users'])->name('Recursos_Users');
+
+Route::get('/infoRecurso/{id}', [RecursoController::class, 'infoRecurso'])->name('infoRecurso');
 
 
 require __DIR__.'/auth.php';
