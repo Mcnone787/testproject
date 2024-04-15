@@ -216,6 +216,7 @@ function customPlugin(editor) {
 </template>
 <style>
 .modal-box{
-    width: auto;
+    width: auto !important;
+    max-width: 100% !important;
 }
 </style>

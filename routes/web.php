@@ -49,5 +49,8 @@ Route::get('/Recursos_Users/{id}', [RecursoController::class, 'Recursos_Users'])
 
 Route::get('/infoRecurso/{id}', [RecursoController::class, 'infoRecurso'])->name('infoRecurso');
 
+Route::get('/testAjax',  function () {
+    return 1;
+});
 
 require __DIR__.'/auth.php';

@@ -21,9 +21,7 @@ let recursosRelacionados=ref(props.recursosRelacionados)
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1">
       <li><a>Link</a></li>
-      <li><a href="login">Login</a></li>
-      <li><a href="register">Register</a></li>
-      <li></li>
+
      
     </ul>
   </div>

@@ -15,10 +15,10 @@ class CursosController extends Controller
         $curso->descripcion=$request["descripcion"];
         $curso->visible=$request["visible"];
         $curso->save();
-        
+
         return response()->json([
             'success' => true,
-            'message' => $request->all(),
+            'message' => $curso,
         ]);
     }
     

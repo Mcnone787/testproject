@@ -4,11 +4,11 @@ import { shallowMount } from '@vue/test-utils';
 
 const BEFORE_ALL_TIMEOUT=30000; 
 
-describe('fetchUsers', () => {
+describe('testAjax', () => {
   let response,body;
   beforeAll(async()=>{
     response=await axios.get(
-      "/tests"
+      "/testAjax"
     );
     body=response
   },BEFORE_ALL_TIMEOUT)
