@@ -71,16 +71,10 @@ function cookies(){
   <div class="flex-none">
     <ul class="menu menu-horizontal px-1">
       <li><a>Link</a></li>
-      <li>
-        <details>
-          <summary>
-            Parent
-          </summary>
-          <ul class="p-2 bg-base-100 rounded-t-none">
-          
-          </ul>
-        </details>
-      </li>
+      <li><a href="login">Login</a></li>
+      <li><a href="register">Register</a></li>
+      <li></li>
+     
     </ul>
   </div>
 </div>
